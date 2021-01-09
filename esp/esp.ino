@@ -1,9 +1,12 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include "network.h"
+#include "LittleFS.h" 
 
 #define LED 5
-#define d_time 1000
+#define d_time 100
+
+int addr=0;
 
 void setup()
 {
