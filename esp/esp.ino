@@ -8,6 +8,23 @@
 
 int addr=0;
 
+ESP8266WebServer server(80);
+
+void rootfanc(){
+    String testmessage="\
+    <!DOCTYPE html>\n\
+    <html lang = \"ja\">\n\
+    <head>\n\
+    <title>test page</title>\n\
+    </head>\n\
+    <body>\n\
+    OK!!\n\
+    </body>\n\
+    </html>\n\
+";
+server.send(200,"txt/html",testmessage);
+}
+
 void setup()
 {
     pinMode(LED, OUTPUT);
@@ -27,6 +44,7 @@ void setup()
     Serial.println();
     Serial.print("Local IP is ");
     Serial.println(WiFi.localIP());
+    server.on("/",rootfanc);
 }
 
 void loop()
