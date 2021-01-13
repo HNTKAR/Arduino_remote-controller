@@ -49,8 +49,5 @@ void setup()
 
 void loop()
 {
-    digitalWrite(LED, LOW);
-    delay(d_time);
-    digitalWrite(LED, HIGH);
-    delay(d_time);
+    server.handleClient();
 }
